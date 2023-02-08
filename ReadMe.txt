@@ -8,6 +8,8 @@ Lorsqu'un utilisateur entre un identifiant et un mot de passe, le programme vér
 mais si l'id et le mot de passe sont similaire alors l'ajout ne s'éffectue pas pour des raison de sécurité.
 Possibilité de masquer le mot de passe ou non dans la zone de saisie. (Si une menace voit votre écran cela peut etre utile)
 
+La table SQL 'login' est disponible dans les fichiers du dossier courant.
+
 Sécurisation du programme : 
 
 Pour sécuriser au mieux ce programme, plusieurs mesures ont été prises :
