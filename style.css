@@ -1,0 +1,45 @@
+*{ 
+	font-family:Verdana, Geneva, Tahoma, sans-serif;
+	font-size:12pt 
+}
+
+body{
+	margin: 0;
+	height: 100vh;
+	background-color: lightblue;
+	display:flex;
+	justify-content:center; 
+	align-items:center;
+}
+form{
+	width: 500px;
+	background-color:rgba(0,0,0,0.3);
+	padding: 60px;
+	box-sizing:border-box;
+}
+
+h1{
+	font-size:18pt;
+	color:#FFF;
+	border-bottom: solid 1px rgba (255, 255, 255, 0.3);
+}
+.submit{
+	background-color:#41666C;
+	padding:6рх 0; 
+	text-align:center;
+	cursor:pointer;
+	color:#FFF;
+}
+
+p img{
+	vertical-align: middle;
+}
+
+h3{
+	color: green;
+}
+
+h4{
+	color:darkred;
+}
+
