@@ -21,15 +21,21 @@
 		
 			$id = mysqli_real_escape_string($conn, $_POST['id']);
 			$mdp = mysqli_real_escape_string($conn, $_POST['mdp']);
-
-			$sql = "SELECT * FROM `login` WHERE identifiant='$id' and mdp='$mdp' ";
+			$sql = "SELECT mdp FROM `login` WHERE identifiant='$id'";
 			$result = mysqli_query($conn, $sql);
 			$rows = mysqli_num_rows($result);
-
-			if($rows==1){
+			$verif = false;
+			
+			if ($rows == 1) {
+				$row = mysqli_fetch_assoc($result);
+				$hash = $row['mdp'];
+				$verif = password_verify($mdp, $hash);
+			}
+			if ($verif) {
 				$_SESSION['attempts'] = 0;
-				$message= "<h3> Vous êtes connecté ! </h3>";
-			} 
+				$message = "<h3> Vous êtes connecté ! </h3>";
+			}
+			
 			else{
 
 				if($_SESSION['attempts'] >= $max_attempts) {
@@ -79,15 +85,17 @@
 
 			$id = mysqli_real_escape_string($conn, $_POST['id']);
 			$mdp = mysqli_real_escape_string($conn, $_POST['mdp']);
+			$mdp = password_hash($mdp,PASSWORD_DEFAULT);
 
 			$sql = "SELECT * FROM `login` WHERE identifiant='$id' and mdp='$mdp' ";
 			$result = mysqli_query($conn, $sql);
 			$rows = mysqli_num_rows($result);
 
 			if($rows==1){
-				$message= " <h4> Echec de l'ajout : Compte déja existant </h4>";
+				$message= " <h4> Echec de l'ajout : Compte avec ce ID déja existant </h4>";
 			} else {
 
+	
 				$sql = "INSERT into `login` (identifiant, mdp) VALUES ('$id', '$mdp')";
 				$result = mysqli_query($conn, $sql);
 

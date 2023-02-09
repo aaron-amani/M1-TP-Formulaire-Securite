@@ -15,6 +15,7 @@ Sécurisation du programme :
 
 Pour sécuriser au mieux ce programme, plusieurs mesures ont été prises :
 Utilisation de la fonction password_hash pour hacher les mots de passe enregistrés dans la base de données.
+Utilisation de la fonction password_verify pour verifier si le mot de passe dans le champs correspond a la valeur haché du mots de passe enregistrés dans la base de données.
 Utilisation de la fonction mysql_real_escape_string() pour empêcher les attaques par injection SQL.
 Vérification de la présence de tous les champs requis avant l'exécution de toute opération.
 Limitation des tentatives de connexion à un nombre maximum en enregistrant le nombre de tentatives ratées pour chaque utilisateur dans la base de données. 
