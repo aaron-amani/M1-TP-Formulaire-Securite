@@ -1,4 +1,5 @@
-Formulaire ID de Aaron Amani
+Formulaire de Aaron Amani
+Matière : Sécurité des systeme d'informations
 
 Ce programme permet de vérifier l'existence d'un compte dans une base de données et d'ajouter un compte s'il n'existe pas.
 
@@ -8,13 +9,15 @@ Lorsqu'un utilisateur entre un identifiant et un mot de passe, le programme vér
 mais si l'id et le mot de passe sont similaire alors l'ajout ne s'éffectue pas pour des raison de sécurité.
 Possibilité de masquer le mot de passe ou non dans la zone de saisie. (Si une menace voit votre écran cela peut etre utile)
 
+La table SQL 'login' est disponible dans les fichiers du dossier courant.
+
 Sécurisation du programme : 
 
 Pour sécuriser au mieux ce programme, plusieurs mesures ont été prises :
 Utilisation de la fonction password_hash pour hacher les mots de passe enregistrés dans la base de données.
+Utilisation de la fonction mysql_real_escape_string() pour empêcher les attaques par injection SQL.
 Vérification de la présence de tous les champs requis avant l'exécution de toute opération.
-Limitation des tentatives de connexion à un nombre maximum en enregistrant le nombre de tentatives ratées pour chaque utilisateur dans la base de données. Après un certain nombre de tentatives infructueuses, le compte de l'utilisateur est bloqué pour une durée déterminée.
-
+Limitation des tentatives de connexion à un nombre maximum en enregistrant le nombre de tentatives ratées pour chaque utilisateur dans la base de données. 
 
 Mot de passe et identifiant pour se connecter :
 
