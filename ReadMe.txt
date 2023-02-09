@@ -20,7 +20,7 @@ Utilisation de la fonction mysql_real_escape_string() pour empêcher les attaque
 Vérification de la présence de tous les champs requis avant l'exécution de toute opération.
 Limitation des tentatives de connexion à un nombre maximum en enregistrant le nombre de tentatives ratées pour chaque utilisateur dans la base de données. 
 
-Mot de passe et identifiant pour se connecter :
+Mot de passe et identifiant de la database :
 
 id:aaron
 mdp:aaron123
